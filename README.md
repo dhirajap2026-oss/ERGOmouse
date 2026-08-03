@@ -6,7 +6,7 @@
 # README.md
 
 ```markdown
-# HandFit Mouse
+
 
 Generate a custom, 3D-printable ergonomic mouse shell from a few photos of your hand.
 
