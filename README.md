@@ -3,139 +3,97 @@
 # ErgoMouse
  
 
-# README.md
+# ERGOmouse
 
-```markdown
+ERGOmouse is an open-source project focused on creating a truly personalized ergonomic computer mouse. Instead of forcing users to adapt to a standard mouse shape, ERGOmouse generates a custom 3D-printable shell based on photos of the user's hand. The goal is to improve comfort, reduce wrist strain, and make long-term computer use more comfortable.
 
+## Why I Started This Project
 
-Generate a custom, 3D-printable ergonomic mouse shell from a few photos of your hand.
+Most mice are designed to fit as many people as possible, but everyone's hand is different. After spending long hours using a computer, I became interested in whether a mouse could be designed specifically for an individual's hand rather than using a one-size-fits-all approach.
 
-## What it does
+This project combines computer vision, parametric CAD generation, and custom hardware to explore that idea.
 
-HandFit Mouse takes photos of your hand, extracts hand measurements (palm width,
-finger lengths, thumb position) using landmark detection, and generates a
-parametric 3D model of a mouse shell shaped to fit your hand. The model can be
-exported as an STL, 3D printed, and assembled with standard mouse electronics
-(optical sensor, switches, scroll wheel) into a fully functional mouse.
+## Features
 
-## How it works
+- Generate a custom mouse shell from hand photos.
+- Parametric 3D model generation.
+- STL export for 3D printing.
+- Modular internal design for electronics.
+- Open-source development.
 
-1. **Capture** — Take two guided photos of your hand: a top-down palm shot with
-   fingers spread, and a side-profile shot with a credit card in frame for scale.
-2. **Landmark detection** — MediaPipe Hands extracts 21 hand landmarks per photo.
-3. **Measurement extraction** — Palm width, per-finger lengths, and thumb
-   CMC angle/offset are calculated from the landmarks, scaled to millimeters
-   using the credit card as a size reference.
-4. **Parametric modeling** — Measurements are mapped onto a parametric mouse
-   shell built in CadQuery, adjusting the palm cradle, finger grooves, and
-   thumb rest to match your hand.
-5. **Export** — The model is exported as an STL, ready to slice and print.
+## Planned Workflow
 
-## Requirements
+1. Capture multiple photos of the user's hand.
+2. Detect key landmarks and measurements.
+3. Generate a parametric 3D model.
+4. Export an STL file.
+5. Print the shell.
+6. Assemble the electronics.
+7. Test and improve the design.
 
-- Python 3.10+
-- `mediapipe`
-- `opencv-python`
-- `cadquery`
-- A webcam or smartphone camera
-- A standard credit/ID card (used as a scale reference)
-- A 3D printer (FDM, PLA or PETG recommended)
+## Hardware
 
-## Usage
+Planned hardware includes:
 
-```bash
-pip install -r requirements.txt
-python capture.py        # guided photo capture
-python measure.py        # extract hand measurements from photos
-python generate_model.py # produce the parametric STL
+- ESP32
+- Optical mouse sensor
+- Rotary encoder (optional)
+- Kailh switches
+- Custom PCB
+- USB-C connection
+- 3D printed enclosure
+
+## Software
+
+The software will:
+
+- Guide the user through taking hand photos.
+- Process the images.
+- Extract important measurements.
+- Generate a customized mouse shell.
+- Export the final model as an STL file.
+
+## Project Status
+
+This project is currently in active development.
+
+Current work includes:
+
+- PCB design
+- Mechanical design
+- Software planning
+- Prototype development
+
+## Repository Structure
+
+```
+ERGOmouse/
+├── README.md
+├── journals/
+├── hardware/
+├── software/
+├── pcb/
+├── cad/
+└── images/
 ```
 
-The generated STL will be saved to `output/shell.stl`.
+## Roadmap
 
-## Assembly
+- [ ] Complete image-processing pipeline
+- [ ] Generate first parametric mouse shell
+- [ ] Finish PCB design
+- [ ] Print first prototype
+- [ ] Assemble electronics
+- [ ] Test ergonomics
+- [ ] Improve shell design
+- [ ] Release first public version
 
-The exported shell is designed in two halves (top/bottom) with screw bosses.
-You'll need:
-- An optical mouse sensor module
-- Two microswitches (left/right click)
-- A scroll wheel assembly
-- M2 screws
+## License
 
-Assembly notes and wiring diagrams are in `docs/assembly.md`.
+This project is licensed under the MIT License.
 
-## Status
+---
 
-Actively in development. Current version generates a working shell shape;
-future work includes support for multiple grip styles (palm/claw/fingertip)
-and better handling of edge cases like rings or long nails during hand capture.
-
-## Notes
-
-Measurements are only as accurate as the input photos — good, even lighting
-and a hand held flat/still against the camera give the best results.
-```
+This project is being developed as a learning experience while exploring ergonomic hardware design, computer vision, PCB design, and 3D printing.
 
 
-Bill of Materials
-#
-Item
-Qty
-Notes
-Approx. Source
-1
-PLA or PETG filament
-~60g
-For top + bottom shell halves
-Any FDM-compatible spool
-2
-Optical mouse sensor module (e.g. PMW3360 breakout)
-1
-Handles cursor tracking
-Robu.in / Robocraze
-3
-Microcontroller (e.g. Arduino Pro Micro / ATmega32U4 board)
-1
-Acts as USB HID mouse
-Robu.in / Robocraze
-4
-Microswitches (left/right click)
-2
-3-pin, 50M-cycle rated preferred
-Robu.in / Robocraze
-5
-Scroll wheel encoder assembly
-1
-Salvaged or standalone rotary encoder
-Salvaged / Robocraze
-6
-Tactile side buttons (optional)
-0–2
-For back/forward buttons
-Robu.in
-7
-M2 machine screws
-4–6
-Shell assembly
-Robu.in
-8
-M2 heat-set inserts (optional)
-4–6
-For stronger, reusable screw bosses
-Robu.in
-9
-Micro-USB or USB-C cable
-1
-Data/power connection
-Any
-10
-Thin foam/silicone pads
-2–4
-Shell feet, reduces friction on desk
-Any
-11
-Hookup wire (26–30 AWG)
-~30cm
-Internal wiring
-Robu.in
-
- 
