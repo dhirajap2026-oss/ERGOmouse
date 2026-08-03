@@ -1,0 +1,131 @@
+/*
+=========================================================
+ ErgoMouse Firmware v0.1 (Example)
+ Open Source Ergonomic Mouse
+=========================================================
+*/
+
+#include <Mouse.h>
+
+// ------------------------
+// Pin Definitions
+// ------------------------
+const int LEFT_BUTTON   = 2;
+const int RIGHT_BUTTON  = 3;
+const int MIDDLE_BUTTON = 4;
+
+const int X_AXIS = A0;
+const int Y_AXIS = A1;
+
+const int LED_PIN = 13;
+
+// ------------------------
+// Mouse Settings
+// ------------------------
+const int DEADZONE = 25;
+const float SENSITIVITY = 1.5;
+
+// ------------------------
+// Variables
+// ------------------------
+bool leftPressed = false;
+bool rightPressed = false;
+bool middlePressed = false;
+
+// ------------------------
+// Setup
+// ------------------------
+void setup()
+{
+    pinMode(LEFT_BUTTON, INPUT_PULLUP);
+    pinMode(RIGHT_BUTTON, INPUT_PULLUP);
+    pinMode(MIDDLE_BUTTON, INPUT_PULLUP);
+
+    pinMode(LED_PIN, OUTPUT);
+
+    Mouse.begin();
+
+    digitalWrite(LED_PIN, HIGH);
+    delay(500);
+    digitalWrite(LED_PIN, LOW);
+}
+
+// ------------------------
+// Loop
+// ------------------------
+void loop()
+{
+    readButtons();
+    readMovement();
+}
+
+// ------------------------
+// Button Handling
+// ------------------------
+void readButtons()
+{
+    handleButton(
+        LEFT_BUTTON,
+        MOUSE_LEFT,
+        leftPressed
+    );
+
+    handleButton(
+        RIGHT_BUTTON,
+        MOUSE_RIGHT,
+        rightPressed
+    );
+
+    handleButton(
+        MIDDLE_BUTTON,
+        MOUSE_MIDDLE,
+        middlePressed
+    );
+}
+
+// ------------------------
+// Generic Button Function
+// ------------------------
+void handleButton(
+    int pin,
+    uint8_t mouseButton,
+    bool &state
+)
+{
+    bool pressed = !digitalRead(pin);
+
+    if (pressed && !state)
+    {
+        Mouse.press(mouseButton);
+        state = true;
+    }
+
+    if (!pressed && state)
+    {
+        Mouse.release(mouseButton);
+        state = false;
+    }
+}
+
+// ------------------------
+// Fake Sensor Movement
+// ------------------------
+void readMovement()
+{
+    int rawX = analogRead(X_AXIS);
+    int rawY = analogRead(Y_AXIS);
+
+    rawX -= 512;
+    rawY -= 512;
+
+    if (abs(rawX) < DEADZONE)
+        rawX = 0;
+
+    if (abs(rawY) < DEADZONE)
+        rawY = 0;
+
+    int moveX = rawX * SENSITIVITY / 64;
+    int moveY = rawY * SENSITIVITY / 64;
+
+    Mouse.move(moveX, moveY);
+}
