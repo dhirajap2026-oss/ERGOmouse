@@ -97,3 +97,23 @@ This project is licensed under the MIT License.
 This project is being developed as a learning experience while exploring ergonomic hardware design, computer vision, PCB design, and 3D printing.
 
 
+
+## Bill of Materials (Planned)
+
+| Item | Quantity | Notes |
+|------|---------:|------|
+| ESP32 DevKit V1 (30-pin) | 1 | Main microcontroller |
+| Optical Mouse Sensor (PMW3360 / PAW3395 or similar) | 1 | Mouse tracking |
+| Left & Right Mouse Switches | 2 | Primary buttons |
+| Tactile Switches | 3 | Middle, DPI, or extra buttons |
+| Rotary Encoder (optional) | 1 | Scroll wheel |
+| Scroll Wheel | 1 | 3D printed or off-the-shelf |
+| USB-C Connector | 1 | Wired connection |
+| Custom PCB | 1 | Designed in KiCad |
+| 3D Printed Mouse Shell | 1 | Generated from hand photos |
+| Female Pin Headers | 2 × 15-pin | Removable ESP32 |
+| M3 Heat-Set Inserts | 4 | Threaded inserts |
+| M3 Screws | 4 | Assembly |
+| PTFE Mouse Feet | 4 | Smooth movement |
+| Wires & Connectors | As needed | Internal wiring |
+
