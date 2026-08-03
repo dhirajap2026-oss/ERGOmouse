@@ -1,0 +1,13 @@
+Devlog 3 — First real print, and reality check time
+Big day — printed the first shell today. Exported the STL from CadQuery, sliced it, and sent it to the printer. It took about 4.5 hours to print in PLA, and the wait was brutal.
+
+The fit was... close, but not right. The palm cradle was actually pretty comfortable, but the thumb rest sat too far forward, and my pinky kept sliding off the side groove. Went back through the measurement math and realized the thumb angle calculation from the side-profile photo was off — I was measuring from the wrist landmark instead of the thumb CMC joint, which threw the whole angle calc by a good 10-15 degrees. Fixed the landmark reference and regenerated the model.
+
+Also spent time today fitting actual mouse internals into the shell — a basic optical sensor module, two microswitches for left/right click, and a scroll wheel assembly salvaged from an old mouse. Had to redesign the internal cavity walls to leave clearance for the PCB and battery, and added screw bosses so the top and bottom shells can actually be assembled instead of just glued.
+
+Things I learned the hard way:
+
+A model that looks right on screen doesn't mean it feels right in your hand — print-and-test iteration is non-negotiable, no amount of staring at the CAD viewport substitutes for actually holding it
+Wall thickness matters a lot for print strength — my first version had 1.2mm walls in the thumb area and it cracked when I tightened the assembly screws; bumped it to 2mm
+Button placement needs its own pass — I'd been treating the shell as one shape-fitting problem, but click actuation force and finger reach are a separate ergonomics problem layered on top
+Printed version two tonight with the corrected thumb angle and thicker walls. Fit is noticeably better — pinky groove finally holds, thumb rest feels natural. Still want to test with a couple other people's hands tomorrow to make sure this isn't just tuned to my own hand by accident.
