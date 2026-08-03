@@ -1,0 +1,13 @@
+Item,Part Number,Description,Quantity,Manufacturer,Supplier,Notes
+1,EM-SHELL-001,Top Shell,1,Custom,3D Printed,PETG
+2,EM-SHELL-002,Bottom Shell,1,Custom,3D Printed,PETG
+3,TBD,Optical Sensor,1,TBD,TBD,
+4,TBD,Microcontroller,1,TBD,TBD,
+5,TBD,Left Switch,1,TBD,TBD,
+6,TBD,Right Switch,1,TBD,TBD,
+7,TBD,Middle Switch,1,TBD,TBD,
+8,TBD,Scroll Encoder,1,TBD,TBD,
+9,TBD,USB-C Connector,1,TBD,TBD,
+10,EM-PCB-001,PCB,1,Custom,JLCPCB,Prototype
+11,TBD,PTFE Mouse Feet,4,TBD,TBD,
+12,TBD,M2 Screws,4,TBD,TBD,
