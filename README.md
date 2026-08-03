@@ -146,3 +146,52 @@ This project will be released under the MIT License unless otherwise specified.
 This repository documents the complete journey—from the first sketch to a fully functional ergonomic mouse and, eventually, a platform that enables anyone to create a mouse tailored to their own hand.
 
 If this project interests you, consider starring the repository and following its progress.
+
+
+
+
+## Bill of Materials (Prototype v1)
+
+| Component                    | Quantity | Purpose                                 |
+| ---------------------------- | :------: | --------------------------------------- |
+| 3D Printed Shell             |     1    | Ergonomic outer housing                 |
+| Top Cover                    |     1    | Upper shell with button cutouts         |
+| Bottom Plate                 |     1    | Base of the mouse                       |
+| Optical Sensor               |     1    | Tracks mouse movement                   |
+| Microcontroller              |     1    | Processes inputs and controls the mouse |
+| Left Mouse Switch            |     1    | Left-click button                       |
+| Right Mouse Switch           |     1    | Right-click button                      |
+| Middle Mouse Switch          |     1    | Scroll-wheel click                      |
+| Scroll Wheel                 |     1    | Scrolling                               |
+| Scroll Wheel Encoder         |     1    | Detects wheel rotation                  |
+| USB-C Connector              |     1    | Wired connection and power              |
+| PCB                          |     1    | Connects all electronic components      |
+| Mouse Feet (PTFE)            |    4–6   | Smooth movement across surfaces         |
+| Screws (M2/M2.5)             |    4–6   | Assemble the mouse                      |
+| Side Buttons *(Optional)*    |     2    | Forward/Back navigation                 |
+| RGB LEDs *(Optional)*        |    1–4   | Status or lighting effects              |
+| Battery *(Wireless Version)* |     1    | Power source                            |
+| Wireless Module *(Future)*   |     1    | Bluetooth/2.4 GHz connectivity          |
+
+### Tools Required
+
+* 3D Printer
+* Soldering Iron
+* Solder Wire
+* Small Phillips Screwdriver
+* Tweezers
+* Flush Cutters
+* Computer for firmware flashing
+* Calipers (recommended)
+
+### Estimated Prototype Cost
+
+| Item                          | Estimated Cost (USD) |
+| ----------------------------- | -------------------: |
+| Electronics                   |               $20–35 |
+| 3D Printed Parts              |                $5–10 |
+| Hardware (Screws, Feet, etc.) |                $5–10 |
+| **Total**                     |           **$30–55** |
+
+> **Note:** The bill of materials will evolve as the design is refined. Exact part numbers and suppliers will be added once the prototype hardware is finalized.
+
