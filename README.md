@@ -143,4 +143,66 @@ and a hand held flat/still against the camera give the best results.
 ```
 
 
+Bill of Materials
+#
+Item
+Qty
+Notes
+Approx. Source
+1
+PLA or PETG filament
+~60g
+For top + bottom shell halves
+Any FDM-compatible spool
+2
+Optical mouse sensor module (e.g. PMW3360 breakout)
+1
+Handles cursor tracking
+Robu.in / Robocraze
+3
+Microcontroller (e.g. Arduino Pro Micro / ATmega32U4 board)
+1
+Acts as USB HID mouse
+Robu.in / Robocraze
+4
+Microswitches (left/right click)
+2
+3-pin, 50M-cycle rated preferred
+Robu.in / Robocraze
+5
+Scroll wheel encoder assembly
+1
+Salvaged or standalone rotary encoder
+Salvaged / Robocraze
+6
+Tactile side buttons (optional)
+0–2
+For back/forward buttons
+Robu.in
+7
+M2 machine screws
+4–6
+Shell assembly
+Robu.in
+8
+M2 heat-set inserts (optional)
+4–6
+For stronger, reusable screw bosses
+Robu.in
+9
+Micro-USB or USB-C cable
+1
+Data/power connection
+Any
+10
+Thin foam/silicone pads
+2–4
+Shell feet, reduces friction on desk
+Any
+11
+Hookup wire (26–30 AWG)
+~30cm
+Internal wiring
+Robu.in
+
  
