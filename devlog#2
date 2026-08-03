@@ -1,0 +1,18 @@
+Devlog 2 — Turning hand photos into numbers
+Today was all about the image-processing pipeline, and it was messier than I expected.
+
+Got MediaPipe Hands running and pulling the 21 landmark points per hand pretty reliably in good lighting. The instructions screen now asks for two photos: palm flat on a table, fingers spread, and a side profile shot to get thumb height. From the landmarks I'm calculating:
+
+Palm width: distance between the index and pinky MCP joints (landmarks 5 and 17)
+Finger lengths: sum of the segment distances from each fingertip landmark down to its base knuckle
+Thumb position: angle and offset of the thumb CMC joint relative to the palm centerline, taken from the side profile shot
+The tricky part was scale. Landmarks come back as normalized coordinates, not real-world millimeters, so I needed a reference object in frame. Went with "place a standard credit card next to your hand" — it's a fixed, known size (85.6mm x 53.98mm) most people have on hand, and I can detect its edges with OpenCV to establish a pixel-to-mm ratio.
+
+Once I had real measurements, I moved on to the parametric model in CadQuery. Built a base mouse shell as a set of parameters — palm cradle width, palm cradle length, thumb rest angle, finger groove depth — and wired the extracted measurements into those parameters. First few generated shells looked more like potatoes than mice, so I spent a few hours adjusting the base spline curves so the palm cradle actually follows a believable hand contour instead of just scaling a box.
+
+Problems today:
+
+Bad lighting or a shadow across the palm throws off landmark confidence — added a confidence threshold that rejects the photo and asks the user to retake it
+Rings and long nails were shifting the fingertip landmarks slightly — not fixing this yet, just noting it
+First parametric attempts didn't leave room for the mouse's internal electronics (sensor board, switches) — had to add a fixed-size internal cavity that the palm cradle geometry works around instead of just shrink-wrapping the hand shape directly
+Next up: experimenting with a few different shell shape families (relaxed claw grip vs. palm grip) so the software can pick a base shape template before applying the personalized measurements
