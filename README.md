@@ -1,3 +1,4 @@
+<img width="1054" height="1492" alt="poster egromouse" src="https://github.com/user-attachments/assets/c48fe7f3-b666-4412-a654-6b5384e17f40" />
 <img width="499" height="344" alt="Screenshot 2026-08-03 171317" src="https://github.com/user-attachments/assets/4a281c9f-f4d2-4539-9451-8743e6cfecda" />
 # ERGOmouse
 # ErgoMouse
